@@ -1,0 +1,296 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #122a45;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.leftSectionContainer {
+  display: none;
+}
+
+.rightSectionContainer {
+  display: none;
+}
+
+.heroBanner {
+  width: 100%;
+  height: -moz-min-content;
+  height: min-content;
+}
+.heroBanner .bannerImg {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0 0 0.5rem 0;
+}
+
+.middleSectionContainer {
+  width: 100%;
+}
+
+.eventsSectionContainer {
+  display: flex;
+  gap: 0.3rem;
+  background-color: #1a3655;
+  color: #95b9df;
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  height: auto;
+}
+.eventsSectionContainer .eventsParticipantsBox {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  flex: 1 0 30%;
+}
+.eventsSectionContainer .eventsParticipants {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 0 0.2rem;
+}
+.eventsSectionContainer .eventScore {
+  color: #00d323;
+}
+.eventsSectionContainer .eventDetails {
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #68829c;
+}
+.eventsSectionContainer .eventOddsBtnBox {
+  display: flex;
+  margin: 0.25rem 0 0.25rem 0;
+  gap: 0.25rem;
+  flex: 1 0 40%;
+}
+.eventsSectionContainer .eventOddsBtn, .eventsSectionContainer .eventOddsBtn-second {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Oswald", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  width: 100%;
+  color: #95b9df;
+  background-color: #346090;
+  border: none;
+}
+.eventsSectionContainer .eventOddsBtn:active, .eventsSectionContainer .eventOddsBtn-second:active {
+  background-color: #e7b900;
+  color: #202b3c;
+}
+.eventsSectionContainer .eventOddsBtn:hover, .eventsSectionContainer .eventOddsBtn-second:hover {
+  background-color: rgb(169, 169, 169);
+  color: #202b3c;
+}
+.eventsSectionContainer .eventOddsBtn:focus, .eventsSectionContainer .eventOddsBtn-second:focus {
+  background-color: #e7b900;
+  color: #202b3c;
+}
+.eventsSectionContainer .oddsLargeScreen, .eventsSectionContainer .oddsLargeScreen-second {
+  display: none;
+  width: 55px;
+  height: 50px;
+}
+.eventsSectionContainer .oddsLargeScreen-second {
+  display: none;
+}
+.eventsSectionContainer .positiveTriangle {
+  position: absolute;
+  top: 0.15rem;
+  right: 0.15rem;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 0 10px;
+  border-color: transparent #00d323;
+  transform: rotate(180deg);
+}
+.eventsSectionContainer .negativeTriangle {
+  position: absolute;
+  bottom: 0.15rem;
+  right: 0.15rem;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 0 10px;
+  border-color: transparent #ff5e5e;
+  transform: rotate(-90deg);
+}
+.eventsSectionContainer .eventOddsBtn:first-child .positiveTriangle, .eventsSectionContainer .eventOddsBtn-second:first-child .positiveTriangle,
+.eventsSectionContainer .eventOddsBtn:last-child .positiveTriangle,
+.eventsSectionContainer .eventOddsBtn-second:last-child .positiveTriangle {
+  display: block;
+}
+.eventsSectionContainer .eventOddsBtn:active .positiveTriangle, .eventsSectionContainer .eventOddsBtn-second:active .positiveTriangle {
+  border-color: transparent #202b3c;
+}
+.eventsSectionContainer .eventOddsBtn:active .negativeTriangle, .eventsSectionContainer .eventOddsBtn-second:active .negativeTriangle {
+  border-color: transparent #202b3c;
+}
+.eventsSectionContainer .positiveTriangle {
+  display: none;
+}
+.eventsSectionContainer .eventFavoriteBtnBox {
+  width: 10%;
+  display: flex;
+}
+.eventsSectionContainer .favoriteBtn {
+  flex: 0 0 100%;
+  background-color: #2b4663;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+.eventsSectionContainer .favoriteStar {
+  flex: 0 0 80%;
+}
+.eventsSectionContainer .svg-path {
+  fill: rgba(191, 193, 194, 0.6);
+}
+.eventsSectionContainer .favoriteStarOn {
+  display: none;
+  flex: 0 0 80%;
+}
+
+.eventsSectionContainer-Empty {
+  width: 100%;
+  height: 100%;
+  background-color: #1a3655;
+  margin: 0.5rem 0 0 0;
+}
+
+@media only screen and (width >= 768px) {
+  .eventsSectionContainer {
+    gap: 1rem;
+  }
+  .eventsSectionContainer .eventsParticipantsBox {
+    gap: 0.25rem;
+  }
+  .eventsSectionContainer .eventDetails {
+    margin: 0 0 0 1rem;
+  }
+  .eventsSectionContainer .eventsParticipants {
+    margin: 0 0 0 1rem;
+  }
+  .eventsSectionContainer .eventOddsBtnBox {
+    flex: 1 0 30%;
+  }
+  .eventsSectionContainer .eventOddsBtnBox .eventOddsBtn, .eventsSectionContainer .eventOddsBtnBox .eventOddsBtn-second {
+    padding: 1.5rem 0 1.5rem 0;
+  }
+  .eventFavoriteBtnBox {
+    flex: 0 0 5%;
+  }
+  .eventFavoriteBtnBox .favoriteStarOn {
+    width: 90%;
+  }
+  .eventFavoriteBtnBox .favoriteStar {
+    width: 90%;
+  }
+}
+@media only screen and (width >= 1023px) {
+  .eventsSectionContainer {
+    gap: 0.25rem;
+  }
+  .eventsSectionContainer .eventsParticipantsBox {
+    flex: 0 0 30%;
+    gap: 0;
+  }
+  .eventsSectionContainer .eventsParticipantsBox .eventsParticipants {
+    flex: 1 1 40%;
+    margin: 0 0 0 0.25rem;
+  }
+  .eventsSectionContainer .eventsParticipantsBox .eventDetails {
+    flex: 1 1 40%;
+    margin: 0 0 0 0.25rem;
+  }
+  .eventsSectionContainer .eventOddsBtnBox {
+    align-items: center;
+    flex: 0 1 20%;
+  }
+  .eventsSectionContainer .eventOddsBtnBox .odds {
+    font-size: 10px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: #7794b2;
+  }
+  .eventsSectionContainer .eventOddsBtnBox .eventOddsBtn, .eventsSectionContainer .eventOddsBtnBox .eventOddsBtn-second {
+    width: 50px;
+    height: 50px;
+  }
+  .eventsSectionContainer .oddsLargeScreen, .eventsSectionContainer .oddsLargeScreen-second {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    gap: 0.2rem;
+  }
+  .eventsSectionContainer .oddsLargeScreen-second {
+    flex: 1 1 18%;
+  }
+  .eventsSectionContainer .oddsLargeScreen-second .eventOddsBtn-second {
+    flex: 1 1 100%;
+  }
+  .leftSectionContainer {
+    display: flex;
+    width: 25%;
+    height: 100dvh;
+    background-color: #1a3655;
+  }
+  .rightSectionContainer {
+    display: flex;
+    width: 25%;
+    height: 100dvh;
+    background-color: #1a3655;
+  }
+}
+@media only screen and (width >= 1280px) {
+  .eventsSectionContainer .eventsParticipantsBox {
+    flex: 0 0 30%;
+  }
+  .eventsSectionContainer .eventsParticipantsBox .eventsParticipants {
+    font-size: 18px;
+  }
+  .eventsSectionContainer .eventsParticipantsBox .eventScore {
+    font-size: 18px;
+  }
+  .eventsSectionContainer .eventOddsBtnBox {
+    flex: 1 1 45%;
+  }
+  .eventsSectionContainer .eventOddsBtnBox .eventOddsBtn, .eventsSectionContainer .eventOddsBtnBox .eventOddsBtn-second {
+    flex: 0 1 35%;
+    height: 100%;
+  }
+  .eventsSectionContainer .oddsLargeScreen, .eventsSectionContainer .oddsLargeScreen-second {
+    flex: 1 1 42%;
+    gap: 0.5rem;
+  }
+  .eventsSectionContainer .oddsLargeScreen .odds, .eventsSectionContainer .oddsLargeScreen-second .odds {
+    font-size: 12px;
+  }
+  .eventsSectionContainer .eventFavoriteBtnBox {
+    flex: 1 0 3%;
+  }
+  .eventsSectionContainer .oddsLargeScreen-second {
+    flex: 1 0 18%;
+  }
+  .eventsSectionContainer .oddsLargeScreen-second .eventOddsBtn-second {
+    flex: 0 1 100%;
+  }
+}/*# sourceMappingURL=style.css.map */

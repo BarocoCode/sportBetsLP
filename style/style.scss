@@ -1,0 +1,377 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+//Variables:
+
+$bodyBg: #122a45;
+$containerBg: #1a3655;
+$bgColorOddsBtnActive: #e7b900;
+
+$bgColorFavoriteBtn: #2b4663;
+$colorEventScore: #00d323;
+
+$colorPositiveOdds: #00d323;
+
+$colorNegativeOdds: #ff5e5e;
+$colorOddsBtn: #346090;
+
+$colorOddsBtnActive: #202b3c;
+
+$oddsColor: #7794b2;
+
+$fontPrimary: "Oswald", sans-serif;
+
+$fontSecondary: "Roboto", sans-serif;
+
+$fontColorPrimary: #95b9df;
+
+body {
+  background-color: $bodyBg;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+// Left SideBar Container
+.leftSectionContainer {
+  display: none;
+}
+
+.rightSectionContainer {
+  display: none;
+}
+
+// Banner Section
+
+.heroBanner {
+  width: 100%;
+  height: min-content;
+
+  .bannerImg {
+    width: 100%;
+    object-fit: cover;
+    margin: 0 0 0.5rem 0;
+  }
+}
+
+//Events Section Containers with oddsButton
+
+.middleSectionContainer {
+  width: 100%;
+}
+
+.eventsSectionContainer {
+  display: flex;
+  gap: 0.3rem;
+  background-color: $containerBg;
+  color: $fontColorPrimary;
+  font-family: $fontPrimary;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  height: auto;
+
+  .eventsParticipantsBox {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    flex: 1 0 30%;
+  }
+
+  .eventsParticipants {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 0 0.2rem;
+  }
+
+  .eventScore {
+    color: $colorEventScore;
+  }
+
+  .eventDetails {
+    font-size: 12px;
+    font-family: $fontSecondary;
+    font-weight: 400;
+    color: #68829c;
+  }
+
+  .eventOddsBtnBox {
+    display: flex;
+    margin: 0.25rem 0 0.25rem 0;
+    gap: 0.25rem;
+    flex: 1 0 40%;
+  }
+
+  .eventOddsBtn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $fontPrimary;
+    font-size: 12px;
+    font-weight: 400;
+    width: 100%;
+    color: $fontColorPrimary;
+    background-color: $colorOddsBtn;
+    border: none;
+
+    &-second {
+      @extend .eventOddsBtn;
+    }
+
+    &:active {
+      background-color: $bgColorOddsBtnActive;
+      color: $colorOddsBtnActive;
+    }
+
+    &:hover {
+      background-color: rgba(169, 169, 169, 1);
+      color: $colorOddsBtnActive;
+    }
+
+    &:focus {
+      background-color: $bgColorOddsBtnActive;
+      color: $colorOddsBtnActive;
+    }
+  }
+
+  .oddsLargeScreen {
+    display: none;
+    width: 55px;
+    height: 50px;
+
+    &-second {
+      @extend .oddsLargeScreen;
+      display: none;
+    }
+  }
+
+  .positiveTriangle {
+    position: absolute;
+    top: 0.15rem;
+    right: 0.15rem;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 0 10px;
+    border-color: transparent $colorPositiveOdds;
+    transform: rotate(180deg);
+  }
+
+  .negativeTriangle {
+    position: absolute;
+    bottom: 0.15rem;
+    right: 0.15rem;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 0 10px;
+    border-color: transparent $colorNegativeOdds;
+    transform: rotate(-90deg);
+  }
+
+  .eventOddsBtn:first-child .positiveTriangle,
+  .eventOddsBtn:last-child .positiveTriangle {
+    display: block;
+  }
+
+  .eventOddsBtn:active .positiveTriangle {
+    border-color: transparent #202b3c;
+  }
+
+  .eventOddsBtn:active .negativeTriangle {
+    border-color: transparent #202b3c;
+  }
+
+  .positiveTriangle {
+    display: none;
+  }
+
+  .eventFavoriteBtnBox {
+    width: 10%;
+    display: flex;
+  }
+
+  .favoriteBtn {
+    flex: 0 0 100%;
+    background-color: $bgColorFavoriteBtn;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+  }
+  .favoriteStar {
+    flex: 0 0 80%;
+  }
+
+  .svg-path {
+    fill: rgba(191, 193, 194, 0.6);
+  }
+
+  .favoriteStarOn {
+    display: none;
+    flex: 0 0 80%;
+  }
+}
+
+.eventsSectionContainer-Empty {
+  width: 100%;
+  height: 100%;
+  background-color: $containerBg;
+  margin: 0.5rem 0 0 0;
+}
+
+//Media Queries - Responsive
+
+@media only screen and (width >= 768px) {
+  .eventsSectionContainer {
+    gap: 1rem;
+
+    .eventsParticipantsBox {
+      gap: 0.25rem;
+    }
+
+    .eventDetails {
+      margin: 0 0 0 1rem;
+    }
+
+    .eventsParticipants {
+      margin: 0 0 0 1rem;
+    }
+
+    .eventOddsBtnBox {
+      flex: 1 0 30%;
+
+      .eventOddsBtn {
+        padding: 1.5rem 0 1.5rem 0;
+      }
+    }
+  }
+
+  .eventFavoriteBtnBox {
+    flex: 0 0 5%;
+
+    .favoriteStarOn {
+      width: 90%;
+    }
+    .favoriteStar {
+      width: 90%;
+    }
+  }
+}
+
+@media only screen and (width >= 1023px) {
+  .eventsSectionContainer {
+    gap: 0.25rem;
+
+    .eventsParticipantsBox {
+      flex: 0 0 30%;
+      gap: 0;
+
+      .eventsParticipants {
+        flex: 1 1 40%;
+        margin: 0 0 0 0.25rem;
+      }
+      .eventDetails {
+        flex: 1 1 40%;
+        margin: 0 0 0 0.25rem;
+      }
+    }
+
+    .eventOddsBtnBox {
+      align-items: center;
+      flex: 0 1 20%;
+
+      .odds {
+        font-size: 10px;
+        font-family: $fontSecondary;
+        font-weight: 400;
+        color: $oddsColor;
+      }
+
+      .eventOddsBtn {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .oddsLargeScreen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: auto;
+      gap: 0.2rem;
+    }
+
+    .oddsLargeScreen-second {
+      flex: 1 1 18%;
+
+      .eventOddsBtn-second {
+        flex: 1 1 100%;
+      }
+    }
+  }
+
+  .leftSectionContainer {
+    display: flex;
+    width: 25%;
+    height: 100dvh;
+    background-color: $containerBg;
+  }
+
+  .rightSectionContainer {
+    display: flex;
+    width: 25%;
+    height: 100dvh;
+    background-color: $containerBg;
+  }
+}
+
+@media only screen and (width >= 1280px) {
+  .eventsSectionContainer {
+    .eventsParticipantsBox {
+      flex: 0 0 30%;
+
+      .eventsParticipants {
+        font-size: 18px;
+      }
+      .eventScore {
+        font-size: 18px;
+      }
+    }
+    .eventOddsBtnBox {
+      flex: 1 1 45%;
+
+      .eventOddsBtn {
+        flex: 0 1 35%;
+        height: 100%;
+      }
+    }
+    .oddsLargeScreen {
+      flex: 1 1 42%;
+      gap: 0.5rem;
+
+      .odds {
+        font-size: 12px;
+      }
+    }
+    .eventFavoriteBtnBox {
+      flex: 1 0 3%;
+    }
+
+    .oddsLargeScreen-second {
+      flex: 1 0 18%;
+
+      .eventOddsBtn-second {
+        flex: 0 1 100%;
+      }
+    }
+  }
+}

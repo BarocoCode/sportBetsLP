@@ -1,0 +1,53 @@
+Technical assignment - EveryMatrix
+
+Requirements:
+Figma Account - is free to register on figma.com;
+You will be able to preview the design without an account, but after login you will be able to inspect it more.
+
+Check the design which was made in Figma:
+Password: techassignment
+https://www.figma.com/file/2R2P77Hg7QgdYemjl9Fh3S/Technical-Assignment-2024---Trainee-level?type=design&node-id=0%3A1&mode=design&t=kHOWtpAdlfCrnJGx-1
+
+Write in one file of html the entire structure for the layout present in design.
+Write by and apply the style according to the design.
+
+For Desktop it has:
+
+- one banner
+- one list with one event (row)
+- 3 empty areas.
+
+As for mobile it has the same banner, the list with the event and one empty area.
+
+The event includes:
+
+- participants name
+- score
+- indicators and event information
+- 3 columns of buttons (odds)
+- favorite button
+
+The first event has one OddButton selected.
+The odds with green arrow have their value increased, the odds with red arrow corner have their value decreased.
+If the OddButton is selected the corner arrow has a dark color.
+When you mouseover the odd button it should have a different color, feel free to use any color you want;
+
+On mobile/tablet resolution only one column of odds is displayed;
+
+Is not a must, but it would be a plus:
+
+- to take decision of styling responsive or adaptive content;
+- to use BEM classes when writing html;
+- to use SASS/SCSS to generate the CSS file;
+- to use variables;
+- for favorite icon to use .svg instead of .png. There are different ways to import svg icons (plain svg, icon-font...);
+
+Advice:
+
+- don't bother with JS, yet - only html and style is needed;
+- use google fonts to import Roboto and Oswald typefaces;
+- you can use the icons which were already exported;
+- even if you do not know how to do something I will be interested to know if you searched for a solution on internet and based on what you made your decisions.
+
+Compress your project in a .zip achive and send it back to us.
+The project should work right after opening the .html file in browser. In case you present your project differently, please inform us of how we can check it.
